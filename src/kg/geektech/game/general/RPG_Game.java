@@ -48,8 +48,7 @@ public class RPG_Game {
     private static void heroesHit(Hero[] heroes, Boss boss) {
         for (int i = 0; i < heroes.length; i++) {
             if (heroes[i].getHealth() > 0 && boss.getHealth() > 0) {
-                boss.setHealth(
-                        boss.getHealth() - heroes[i].getDamage());
+                boss.setHealth(boss.getHealth() - heroes[i].getDamage());
             }
         }
     }
