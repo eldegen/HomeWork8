@@ -9,8 +9,8 @@ public class Berserk extends Hero{
     public void applySuperPower(Hero[] heroes, Boss boss) {
         boss.setHealth(boss.getHealth() - boss.getDamage());
 
-        System.out.println("================= Berserk's revert! =================");
+        System.out.println("=============== Berserk does revert! ===============");
         System.out.println("Berserk reverts " + boss.getDamage() + " HP to Boss");
-        System.out.println("=====================================================");
+        System.out.println("====================================================");
     }
 }

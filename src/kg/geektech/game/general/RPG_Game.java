@@ -47,7 +47,7 @@ public class RPG_Game {
 
     private static void heroesHit(Hero[] heroes, Boss boss) {
         for (int i = 0; i < heroes.length; i++) {
-            if (heroes[i].getHealth() > 0 && boss.getHealth() > 0) {
+            if (heroes[i].getHealth() > 0 && boss.getHealth() > 0 && i != 0) {
                 boss.setHealth(boss.getHealth() - heroes[i].getDamage());
             }
         }
@@ -72,7 +72,7 @@ public class RPG_Game {
     }
 
     private static void printStatistics(Hero[] heroes, Boss boss) {
-        System.out.println("______________");
+        System.out.println("================ Round recap ================");
         System.out.println("Boss health: " + boss.getHealth() +
                 ", damage: " + boss.getDamage());
         for (int i = 0; i < heroes.length; i++) {
@@ -80,7 +80,7 @@ public class RPG_Game {
                     + heroes[i].getHealth() +
                     ", damage: " + heroes[i].getDamage());
         }
-        System.out.println("______________");
+        System.out.println("=============================================");
     }
 
 }

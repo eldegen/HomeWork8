@@ -15,8 +15,8 @@ public class Magic extends Hero {
         for (int i = 0; i < heroes.length; i++) {
             heroes[i].setDamage(heroes[i].getDamage() + dmgBoost);
         }
-        System.out.println("================= Magic's boost! =================");
+        System.out.println("=============== Magic does boost! ===============");
         System.out.println("Magic buffed to all heroes " + dmgBoost + " DMG");
-        System.out.println("==================================================");
+        System.out.println("=================================================");
     }
 }
