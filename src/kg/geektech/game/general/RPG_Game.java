@@ -8,14 +8,16 @@ public class RPG_Game {
 
         Boss boss = new Boss(1500, 50, false);
 
-        Warrior warrior = new Warrior(290, 15);
+        Warrior warrior = new Warrior(250, 15);
         Medic doc = new Medic(200, 5, 15);
         Magic magic = new Magic(270, 20);
-        Berserk berserk = new Berserk(240, 20);
+        Berserk berserk = new Berserk(300, 20);
         Medic assistant = new Medic(280, 10, 5);
         Thor thor = new Thor(300, 15);
         Golem golem = new Golem(600, 5);
-        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor, golem};
+        Witcher witcher = new Witcher(200, 0);
+        Aurora aurora = new Aurora(250, 10);
+        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor, golem, witcher, aurora};
         printStatistics(heroes, boss);
 
         while (!isGameFinished(heroes, boss)) {
@@ -28,6 +30,7 @@ public class RPG_Game {
         heroesHit(heroes, boss);
         applySuperPowers(heroes, boss);
         bossStun(boss);
+//        isEntityHealthNegative(heroes, boss);
         printStatistics(heroes, boss);
     }
 
@@ -66,6 +69,17 @@ public class RPG_Game {
             }
         }
     }
+
+    /*private static void isEntityHealthNegative (Hero[] heroes, Boss boss) {
+        for (int i = 0; i < heroes.length; i++) {
+            if (heroes[i].getHealth() <= 0) {
+                heroes[i].setHealth(0);
+            }
+        }
+        if (boss.getHealth() <= 0) {
+            boss.setHealth(0);
+        }
+    }*/
 
     private static boolean isGameFinished(Hero[] heroes, Boss boss) {
         if (boss.getHealth() <= 0) {
