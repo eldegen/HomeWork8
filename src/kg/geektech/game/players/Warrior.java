@@ -16,7 +16,7 @@ public class Warrior extends Hero{
 
         boss.setHealth(boss.getHealth() - (heroes[0].getDamage() * randCritMultiply));
         System.out.println("============ Warrior deals critical damage! ============");
-        System.out.println("Warrior dealt " + (getDamage() * randCritMultiply) + " DMG");
+        System.out.println("Warrior's total critical damage " + (getDamage() + (getDamage() * randCritMultiply)));
         System.out.println("========================================================");
     }
 }

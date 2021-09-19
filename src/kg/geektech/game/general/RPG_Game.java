@@ -16,8 +16,7 @@ public class RPG_Game {
         Thor thor = new Thor(300, 15);
         Golem golem = new Golem(600, 5);
         Witcher witcher = new Witcher(200, 0);
-        Aurora aurora = new Aurora(250, 10);
-        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor, golem, witcher, aurora};
+        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor, golem, witcher};
         printStatistics(heroes, boss);
 
         while (!isGameFinished(heroes, boss)) {
@@ -30,7 +29,6 @@ public class RPG_Game {
         heroesHit(heroes, boss);
         applySuperPowers(heroes, boss);
         bossStun(boss);
-//        isEntityHealthNegative(heroes, boss);
         printStatistics(heroes, boss);
     }
 
@@ -52,7 +50,7 @@ public class RPG_Game {
 
     private static void heroesHit(Hero[] heroes, Boss boss) {
         for (int i = 0; i < heroes.length; i++) {
-            if (heroes[i].getHealth() > 0 && boss.getHealth() > 0 && i != 0) {
+            if (heroes[i].getHealth() > 0 && boss.getHealth() > 0) {
                 boss.setHealth(boss.getHealth() - heroes[i].getDamage());
             }
         }
@@ -69,17 +67,6 @@ public class RPG_Game {
             }
         }
     }
-
-    /*private static void isEntityHealthNegative (Hero[] heroes, Boss boss) {
-        for (int i = 0; i < heroes.length; i++) {
-            if (heroes[i].getHealth() <= 0) {
-                heroes[i].setHealth(0);
-            }
-        }
-        if (boss.getHealth() <= 0) {
-            boss.setHealth(0);
-        }
-    }*/
 
     private static boolean isGameFinished(Hero[] heroes, Boss boss) {
         if (boss.getHealth() <= 0) {
