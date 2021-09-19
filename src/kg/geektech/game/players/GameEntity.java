@@ -1,7 +1,7 @@
 package kg.geektech.game.players;
 
 public abstract class GameEntity {
-    private int health;
+    private double health;
     private int damage;
 
     public GameEntity(int health, int damage) {
@@ -9,11 +9,11 @@ public abstract class GameEntity {
         this.damage = damage;
     }
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         if (health < 0) {
             this.health = 0;
         } else {

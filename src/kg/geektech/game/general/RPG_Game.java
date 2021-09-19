@@ -6,7 +6,7 @@ public class RPG_Game {
 
     public static void start() {
 
-        Boss boss = new Boss(700, 50, false);
+        Boss boss = new Boss(1500, 50, false);
 
         Warrior warrior = new Warrior(290, 15);
         Medic doc = new Medic(200, 5, 15);
@@ -14,7 +14,8 @@ public class RPG_Game {
         Berserk berserk = new Berserk(240, 20);
         Medic assistant = new Medic(280, 10, 5);
         Thor thor = new Thor(300, 15);
-        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor};
+        Golem golem = new Golem(600, 5);
+        Hero[] heroes = {warrior, doc, magic, berserk, assistant, thor, golem};
         printStatistics(heroes, boss);
 
         while (!isGameFinished(heroes, boss)) {
